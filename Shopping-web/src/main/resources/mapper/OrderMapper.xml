@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.copper.mapper.OrderMapper">
+    <!--插入订单-->
+    <insert id="insertOrder" useGeneratedKeys="true" keyProperty="orderId" parameterType="cn.copper.pojo.Order">
+        INSERT INTO `order`(order_number,user_id,order_price,pay_status,order_createTime,order_updateTime)
+        VALUES(
+            <if test="#{orderNumber} != null">
+                #{orderNumber},
+            </if>
+            <if test=" #{userId} != null">
+                #{userId},
+            </if>
+            <if test="#{orderPrice} != null">
+                #{orderPrice},
+            </if>
+            <if test="#{payStatus} != null">
+                #{payStatus},
+            </if>
+            <if test="#{orderCreateTime} != null">
+                #{orderCreateTime},
+            </if>
+            <if test="#{orderUpdateTime} != null">
+                #{orderUpdateTime}
+            </if>
+          )
+    </insert>
+    <!--插入订单项 -->
+    <insert id="insertOrderItem" useGeneratedKeys="true" keyProperty="orderItemId" parameterType="cn.copper.pojo.OrderItem">
+          INSERT INTO order_item(order_id,goods_id,goods_sum,goods_price,order_item_createTime,order_item_updateTime)
+          VALUES (
+              <if test="#{orderId} != null">
+                  #{orderId},
+              </if>
+                <if test="#{goodsId} != null">
+                    #{goodsId},
+                </if>
+                <if test="#{goodsSum} != null">
+                    #{goodsSum},
+                </if>
+                <if test="#{goodsPrice} != null">
+                    #{goodsPrice},
+                </if>
+                <if test="#{orderItemCreateTime} != null">
+                    #{orderItemCreateTime},
+                </if>
+                <if test="#{orderItemUpdateTime} != null">
+                    #{orderItemUpdateTime}
+                </if>
+          )
+    </insert>
+    <!--订单查询结果集 -->
+    <resultMap id="orderResultMap" type="cn.copper.pojo.Order">
+        <result property="orderId" column="order_id"/>
+        <result property="orderNumber" column="order_number"/>
+        <result property="userId" column="user_id"/>
+        <result property="orderPrice" column="order_price"/>
+        <result property="payStatus" column="pay_status"/>
+        <result property="orderCreateTime" column="order_createTime"/>
+        <result property="orderUpdateTime" column="order_updateTime"/>
+    </resultMap>
+    <!--订单项查询结果集 -->
+    <resultMap id="orderItemResultMap" type="cn.copper.pojo.OrderItem">
+        <result property="orderItemId" column="order_itemId"/>
+        <result property="orderId" column="order_id"/>
+        <result property="goodsId" column="goods_id"/>
+        <result property="goodsSum" column="goods_sum"/>
+        <result property="goodsPrice" column="goods_price"/>
+        <result property="orderItemCreateTime" column="order_item_createTime"/>
+        <result property="orderItemUpdateTime" column="order_item_updateTime"/>
+    </resultMap>
+    <!--订单id查询订单-->
+    <select id="selectOrderByOrderId" parameterType="java.lang.Integer" resultMap="orderResultMap">
+        SELECT * FROM `order`
+        <where>
+            <if test="#{_parameter} != null">
+                order_id = #{_parameter}
+            </if>
+        </where>
+        ORDER BY order_id DESC
+    </select>
+    <!--用户id查询订单-->
+    <select id="selectOrderByUserId" parameterType="java.lang.Integer" resultMap="orderResultMap">
+        SELECT * FROM `order`
+        <where>
+            <if test="#{_parameter} != null">
+                user_id = #{_parameter}
+            </if>
+        </where>
+        ORDER BY order_id DESC
+    </select>
+    <!--订单号查询订单-->
+    <select id="selectOrderByOrderNumber" parameterType="java.lang.String" resultMap="orderResultMap">
+        SELECT * FROM `order`
+        <where>
+            <if test="#{_parameter} != null">
+                order_number = #{_parameter}
+            </if>
+        </where>
+        ORDER BY order_id DESC
+    </select>
+    <!--用户id查询订单项-->
+    <select id="selectOrderItemByUserId" parameterType="java.lang.Integer" resultMap="orderItemResultMap">
+        SELECT * FROM `order_item`
+        <where>
+            <if test="#{_parameter} != null">
+                user_id = #{_parameter}
+            </if>
+        </where>
+    </select>
+    <!--通过订单id查询订单项 -->
+    <select id="selectOrderItemByOrdrId" parameterType="java.lang.Integer" resultMap="orderItemResultMap">
+        SELECT * FROM `order_item`
+        <where>
+            <if test="#{_parameter} != null">
+                order_id = #{_parameter}
+            </if>
+        </where>
+    </select>
+    <!--通过订单id删除订单 -->
+    <delete id="deleteOrderByOrderId" parameterType="java.lang.Integer">
+          DELETE FROM `order`
+          <where>
+              order_id = #{_parameter}
+          </where>
+    </delete>
+    <!--通过订单id删除订单项 -->
+    <delete id="deleteOrderItemByOrderId" parameterType="java.lang.Integer">
+        DELETE  FROM `order_item`
+        <where>
+            order_id = #{_parameter}
+        </where>
+    </delete>
+    <!--通过订单id修改订单状态 -->
+    <update id="updatePayStatusByOrderId" parameterType="java.lang.Integer">
+        UPDATE `order` SET
+        pay_status = 1
+        <where>
+            order_id = #{_parameter}
+        </where>
+    </update>
+</mapper>

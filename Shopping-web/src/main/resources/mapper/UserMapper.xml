@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.copper.mapper.UserMapper">
+    <!--插入用户 -->
+    <insert id="insertUser" useGeneratedKeys="true" parameterType="cn.copper.pojo.User" keyProperty="userId">
+        INSERT INTO user(username,password,email,phone,address,user_createTime,user_updateTime)
+        VALUES (#{userName},#{password},
+        #{email},#{phone},#{address},
+        #{userCreateTime},#{userUpdateTime})
+    </insert>
+    <!--通过用户名查询用户(loginBody) -->
+    <resultMap id="userResultMap" type="cn.copper.pojo.User">
+        <result property="userId" column="user_id"/>
+        <result property="userName" column="username"/>
+        <result property="password" column="password"/>
+        <result property="email" column="email"/>
+        <result property="phone" column="phone"/>
+        <result property="address" column="address"/>
+        <result property="userCreateTime" column="user_createTime"/>
+        <result property="userUpdateTime" column="user_updateTime"/>
+    </resultMap>
+    <select id="selectUserByUserName" parameterType="cn.copper.domain.requestpPojo.LoginBody" resultMap="userResultMap">
+          SELECT * FROM user
+        <!-- 动态sql查询：where可以自动去掉第一个and -->
+        <where>
+                <if test="#{userName}!=null and #{userName}!='' ">
+                          and username=#{userName}
+                </if>
+        </where>
+    </select>
+    <!--修改密码-->
+    <update id="updateUserPassword" parameterType="cn.copper.pojo.User">
+          UPDATE user SET
+          <if test="#{password != null}">
+              password=#{password},
+          </if>
+         <if test="#{userUpdateTime != null}">
+             user_updateTime=#{userUpdateTime}
+          </if>
+          WHERE
+        <if test="#{userName != null}">
+            username=#{userName}
+        </if>
+    </update>
+    <!--更改用户信息(包含用户名) -->
+    <update id="updateUserInfo" parameterType="cn.copper.pojo.User">
+        UPDATE user SET
+        <if test="#{userName}!=null and #{userName}!=''">
+                userName=#{userName},
+        </if>
+        <if test="#{password}!=null and #{password}!=''">
+                password=#{password},
+        </if>
+        <if test="#{email}!=null and #{email}!=''">
+                email=#{email},
+        </if>
+        <if test="#{phone}!=null and #{phone}!=''">
+                phone=#{phone},
+        </if>
+        <if test="#{address}!=null and #{address}!=''">
+                address=#{address},
+        </if>
+        <if test="#{userUpdateTime}!=null and #{userUpdateTime}!=''">
+                user_updateTime=#{userUpdateTime}
+        </if>
+        WHERE
+        <if test="#{userId}!=null and #{userId}!='' ">
+                 user_id=#{userId}
+        </if>
+    </update>
+    <!--更改用户信息(不更新用户名) -->
+    <update id="updateUserInfoExceptUserName" parameterType="cn.copper.pojo.User">
+        UPDATE user SET
+        <if test="#{password}!=null and #{password}!=''">
+            password=#{password},
+        </if>
+        <if test="#{email}!=null and #{email}!=''">
+            email=#{email},
+        </if>
+        <if test="#{phone}!=null and #{phone}!=''">
+            phone=#{phone},
+        </if>
+        <if test="#{address}!=null and #{address}!=''">
+            address=#{address},
+        </if>
+        <if test="#{userUpdateTime}!=null and #{userUpdateTime}!=''">
+            user_updateTime=#{userUpdateTime}
+        </if>
+        WHERE
+        <if test="#{userId}!=null and #{userId}!='' ">
+            user_id=#{userId}
+        </if>
+    </update>
+</mapper>

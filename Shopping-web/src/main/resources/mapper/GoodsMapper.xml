@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.copper.mapper.GoodsMapper">
+    <select id="countGoods" resultType="java.lang.Integer">
+        SELECT count(*) FROM goods
+    </select>
+    <select id="countGoodsNumByName" resultType="java.lang.Integer">
+        SELECT count(*) FROM goods
+        <where>
+            <if test="#{_parameter} != null">
+                goods_name LIKE CONCAT(CONCAT('%',#{_parameter}),'%')
+            </if>
+        </where>
+    </select>
+    <!--通过商品名模糊查询商品 -->
+    <resultMap id="goodsResultMap" type="cn.copper.pojo.Goods" >
+        <result property="goodsId" column="goods_id"/>
+        <result property="goodsName" column="goods_name"/>
+        <result property="goodsPrice" column="goods_price"/>
+        <result property="goodsImage" column="goods_image"/>
+        <result property="categoryId" column="category_id"/>
+        <result property="brandId" column="brand_id"/>
+        <result property="goodsCreateTime" column="goods_createTime" />
+        <result property="goodsUpdateTime" column="goods_updateTime"/>
+    </resultMap>
+    <!--查询所有商品 每个页面显示9条数据 -->
+    <select id="selectAllGoods" resultMap="goodsResultMap">
+        SELECT * FROM goods limit 9
+    </select>
+    <!--指定商品名模糊查询商品 每个页面显示9条数据
+     Mysql的分页limit (startNum从0开始,pageSize)
+     -->
+    <select id="selectGoodsByPageNum" resultMap="goodsResultMap">
+        SELECT * FROM goods limit #{_parameter},9
+    </select>
+    <select id="selectGoodsByPageNumAndName" parameterType="cn.copper.domain.requestpPojo.NameAndPage" resultMap="goodsResultMap">
+        SELECT * FROM goods
+        <where>
+            <if test="#{goodsName} != null">
+                goods_name LIKE CONCAT(CONCAT('%',#{goodsName}),'%')
+            </if>
+        </where>
+        limit #{page},9
+    </select>
+    <select id="selectGoodsByName"  resultMap="goodsResultMap">
+        SELECT * FROM goods
+        <where>
+            <if test="#{_parameter} != null">
+                AND goods_name LIKE CONCAT(CONCAT('%',#{_parameter}),'%')
+            </if>
+        </where>
+    </select>
+    <!--
+     Mybatis默认采用ONGL解析参数，所以会自动采用对象树的形式取string.num值，引起报错。
+     也可以public List methodName(@Param(value="num") String num)的方法说明参数值
+     无论参数名，都要改成"_parameter"。
+     -->
+    <select id="selectGooodsById" resultMap="goodsResultMap">
+        SELECT * FROM goods
+        <where>
+            <if test = "#{_parameter}!= null and #{_parameter}!= ''">
+            AND goods_id = #{_parameter}
+            </if>
+        </where>
+    </select>
+</mapper>
