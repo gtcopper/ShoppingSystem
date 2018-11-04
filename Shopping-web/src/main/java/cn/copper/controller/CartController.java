@@ -48,7 +48,7 @@ public class CartController {
                 return ResultGenerator.genSuccessResult("加入购物车成功");
             }
         }
-        return ResultGenerator.genFailureResult("加入购物车失败");
+        return ResultGenerator.genFailureResult("加入购物车失败",ResultCode.FAILUER);
     }
 
     @ResponseBody

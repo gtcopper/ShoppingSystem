@@ -365,37 +365,37 @@ li.facebook a span {
 	height: 75px;
 	width: 75px;
 	display: block;
-	background: url(../images/img-sprite.png)no-repeat -34px -157px;
+	background: url(../images/wechat.png) no-repeat 15px 15px;
 }
 li.facebook a span:hover {
-	background: url(../images/img-sprite.png) no-repeat -34px -230px;
+	background: url(../images/wechat.png) no-repeat 15px 15px;
 }
 li.twitter a span {
 	height: 75px;
 	width: 75px;
 	display: block;
-	background: url(../images/img-sprite.png)no-repeat -114px -157px;
+	background: url(../images/QQ.png)no-repeat 15px 15px;
 }
 li.twitter a span:hover {
-	background: url(../images/img-sprite.png) no-repeat -114px -230px;
+	background: url(../images/QQ.png) no-repeat 15px 15px;
 }
 li.google a span {
 	height: 75px;
 	width: 75px;
 	display: block;
-	background: url(../images/img-sprite.png)no-repeat -190px -157px;
+	background: url(../images/sina.png)no-repeat 15px 15px;
 }
 li.google a span:hover {
-	background: url(../images/img-sprite.png) no-repeat -190px -230px;
+	background: url(../images/sina.png) no-repeat 15px 15px;
 }
 li.dot a span {
 	height: 75px;
 	width: 75px;
 	display: block;
-	background: url(../images/img-sprite.png)no-repeat -272px -157px;
+	background: url(../images/friend.png)no-repeat 15px 15px;
 }
 li.dot a span:hover {
-	background: url(../images/img-sprite.png) no-repeat -272px -230px;
+	background: url(../images/friend.png) no-repeat 15px 15px;
 }
 .content-top{
 	margin:2% 0;

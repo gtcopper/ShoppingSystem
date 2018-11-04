@@ -112,11 +112,11 @@
             </ul>
         </div>
         <div class="header-search">
-            <form id="search-form" action="goods/searchGoods" target="_blank" method="get">
+            <form id="search-form" action="goods/searchGoods"  method="get">
                 <input id="search-text" class="search-text" type="search" id="search" name="goodsName">
                 <div class="hot_words" id="hot-words">
-                    <a href="goods/searchGoods?goodsName=手机" target="_blank" id="hot_1">手机</a>
-                    <a href="goods/searchGoods?goodsName=笔记本" target="_blank" id="hot_2">笔记本电脑</a>
+                    <a href="goods/searchGoods?goodsName=手机" id="hot_1">手机</a>
+                    <a href="goods/searchGoods?goodsName=笔记本"  id="hot_2">笔记本电脑</a>
                 </div>
                 <input class="search-btn iconfont"  type="submit" name="" value="&#xe60b;">
             </form>
@@ -129,7 +129,7 @@
         <!-- start header menu -->
         <ul class="megamenu skyblue">
             <li><a class="color1" href="">主 页</a></li>
-            <li class="grid"><a class="color2" href="goods/searchGoods?goodsName=手机" target="_blank">手机</a>
+            <li class="grid"><a class="color2" href="goods/searchGoods?goodsName=手机">手机</a>
                 <div class="megapanel">
                     <div class="row">
                         <div class="col1">
@@ -168,7 +168,7 @@
                     </div>
                 </div>
             </li>
-            <li class="active grid"><a class="color4" href="goods/searchGoods?goodsName=电视" target="_blank">电视</a>
+            <li class="active grid"><a class="color4" href="goods/searchGoods?goodsName=电视">电视</a>
                 <div class="megapanel">
                     <div class="row">
                         <div class="col1">
@@ -215,7 +215,7 @@
                     </div>
                 </div>
             </li>
-            <li><a class="color5" href="goods/searchGoods?goodsName=笔记本" target="_blank">笔记本</a>
+            <li><a class="color5" href="goods/searchGoods?goodsName=笔记本">笔记本</a>
                 <div class="megapanel">
                     <div class="row">
                         <div class="col1">
@@ -255,7 +255,7 @@
                     </div>
                 </div>
             </li>
-            <li><a class="color6" href="goods/searchGoods?goodsName=空调" target="_blank">空调</a>
+            <li><a class="color6" href="goods/searchGoods?goodsName=空调">空调</a>
                 <div class="megapanel">
                     <div class="row">
                         <div class="col1">
@@ -306,7 +306,7 @@
             </li>
             <li><a class="color7" href="#">新品</a>
             </li>
-            <li><a class="color8" target="_blank" href="goods/searchGoods?goodsName=路由器">路由器</a>
+            <li><a class="color8"  href="goods/searchGoods?goodsName=路由器">路由器</a>
             </li>
             <li><a class="color9" href="#">智能硬件</a>
             </li>
@@ -469,10 +469,9 @@
 		    	      </span>
                         <ul class="list">
                             <li>
-                                <img src="images/plus.png" alt=""/>
                                 <ul class="icon1 sub-icon1 profile_img">
                                     <li>
-                                        <form id="cartForm1" action="cart/addToCart" method="post">
+                                        <form id="cartForm1" style="margin-left: 33px;" action="cart/addToCart" method="post">
                                             <input type="hidden" name="goodsSum" value="1"/>
                                             <input type="hidden" name="goodsId" value="1">
                                             <button id="btnSubmit1" type="button" class="grey2">
@@ -516,10 +515,9 @@
 		    	      </span>
                     <ul class="list">
                         <li>
-                            <img src="images/plus.png" alt=""/>
                             <ul class="icon1 sub-icon1 profile_img">
                                 <li>
-                                    <form id="cartForm2" action="cart/addToCart" method="post">
+                                    <form id="cartForm2"  style="margin-left: 33px;" action="cart/addToCart" method="post">
                                         <input type="hidden" name="goodsSum" value="1"/>
                                         <input type="hidden" name="goodsId" value="2">
                                         <button id="btnSubmit2" type="button" class="grey2">
@@ -563,10 +561,9 @@
 		    	      </span>
                     <ul class="list">
                         <li>
-                            <img src="images/plus.png" alt=""/>
                             <ul class="icon1 sub-icon1 profile_img">
                                 <li>
-                                    <form id="cartForm3" action="cart/addToCart" method="post">
+                                    <form id="cartForm3"  style="margin-left: 33px;" action="cart/addToCart" method="post">
                                         <input type="hidden" name="goodsSum" value="1"/>
                                         <input type="hidden" name="goodsId" value="3">
                                         <button id="btnSubmit3" type="button" class="grey2">
@@ -613,10 +610,9 @@
 		    	      </span>
                     <ul class="list">
                         <li>
-                            <img src="images/plus.png" alt=""/>
                             <ul class="icon1 sub-icon1 profile_img">
                                 <li>
-                                    <form  id="cartForm4" action="cart/addToCart" method="post">
+                                    <form  id="cartForm4"  style="margin-left: 33px;" action="cart/addToCart" method="post">
                                         <input type="hidden" name="goodsSum" value="1"/>
                                         <input type="hidden" name="goodsId" value="4">
                                         <button id="btnSubmit4" type="button" class="grey2">
@@ -660,10 +656,9 @@
 		    	      </span>
                     <ul class="list">
                         <li>
-                            <img src="images/plus.png" alt=""/>
                             <ul class="icon1 sub-icon1 profile_img">
                                 <li>
-                                    <form id="cartForm5" action="cart/addToCart" method="post">
+                                    <form id="cartForm5"  style="margin-left: 33px;"  action="cart/addToCart" method="post">
                                         <input type="hidden" name="goodsSum" value="1"/>
                                         <input type="hidden" name="goodsId" value="5">
                                         <button id="btnSubmit5" type="button" class="grey2">
@@ -707,10 +702,9 @@
 		    	      </span>
                     <ul class="list">
                         <li>
-                            <img src="images/plus.png" alt=""/>
                             <ul class="icon1 sub-icon1 profile_img">
                                 <li>
-                                    <form id="cartForm6" action="cart/addToCart" method="post" content="application/json">
+                                    <form id="cartForm6"  style="margin-left: 33px;" action="cart/addToCart" method="post" content="application/json">
                                         <input type="hidden" name="goodsSum" value="1"/>
                                         <input type="hidden" name="goodsId" value="6">
                                         <button id="btnSubmit6" type="button" class="grey2">
@@ -874,10 +868,12 @@
                 dataType: 'json',
                 data: JSON.stringify(getFormData($("#cartForm1"))),
                 success: function (result) {
+                    console.log(result);
                     alert("加入购物车成功")
                 },
-                error: function () {
+                error: function (data) {
                     //错误处理
+                    window.location.replace("/shoppingsystem/cart/user/myCart");
                 }
             });
         });
@@ -894,6 +890,7 @@
                 },
                 error: function () {
                     //错误处理
+                    window.location.replace("/shoppingsystem/cart/user/myCart");
                 }
             });
         });
@@ -910,6 +907,7 @@
                 },
                 error: function () {
                     //错误处理
+                    window.location.replace("/shoppingsystem/cart/user/myCart");
                 }
             });
         });
@@ -926,6 +924,7 @@
                 },
                 error: function () {
                     //错误处理
+                    window.location.replace("/shoppingsystem/cart/user/myCart");
                 }
             });
         });
@@ -942,6 +941,7 @@
                 },
                 error: function () {
                     //错误处理
+                    window.location.replace("/shoppingsystem/cart/user/myCart");
                 }
             });
         });
@@ -958,6 +958,7 @@
                 },
                 error: function () {
                     //错误处理
+                    window.location.replace("/shoppingsystem/cart/user/myCart");
                 }
             });
         });

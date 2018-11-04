@@ -85,234 +85,234 @@
 	</script>
 </head>
 <body>
-	 <div class="header-top">
-	 <div class="wrap"> 
+<div class="header-top">
+	<div class="wrap">
 		<div class="logo">
 			<a href="">网上购物商城</a>
-	    </div>
-		 <div class="cssmenu">
-			 <ul>
-				 <c:if test="${!empty sessionScope.user}">
-					 <li class="active"><a href="user/showUserInfo">${sessionScope.user.userName}</a></li>
-				 </c:if>
-				 <c:if test="${empty sessionScope.user}">
-					 <li class="active"><a href="user/registerPrompt">注册</a></li>
-				 </c:if>
-				 <c:if test="${empty sessionScope.user}">
-					 <li class="active"><a href="user/loginPrompt">登录</a></li>
-				 </c:if>
-				 <c:if test="${!empty sessionScope.user}">
-					 <li class="active"><a href="user/logout">退出登录</a></li>
-				 </c:if>
-				 <li><a href="cart/user/myCart">购物车</a></li>
-				 <li><a href="order/user/myOrder">我的订单</a></li>
-			 </ul>
-		 </div>
-		 <div class="header-search">
-			 <form id="search-form" action="goods/searchGoods" target="_blank" method="get">
-				 <input id="search-text" class="search-text" type="search" id="search" name="goodsName">
-				 <div class="hot_words" id="hot-words">
-					 <a href="goods/searchGoods?goodsName=手机" target="_blank" id="hot_1">手机</a>
-					 <a href="goods/searchGoods?goodsName=笔记本" target="_blank" id="hot_2">笔记本电脑</a>
-				 </div>
-				 <input class="search-btn iconfont"  type="submit" name="" value="&#xe60b;">
-			 </form>
-		 </div>
+		</div>
+		<div class="cssmenu">
+			<ul>
+				<c:if test="${!empty sessionScope.user}">
+					<li class="active"><a href="user/showUserInfo">${sessionScope.user.userName}</a></li>
+				</c:if>
+				<c:if test="${empty sessionScope.user}">
+					<li class="active"><a href="user/registerPrompt">注册</a></li>
+				</c:if>
+				<c:if test="${empty sessionScope.user}">
+					<li class="active"><a href="user/loginPrompt">登录</a></li>
+				</c:if>
+				<c:if test="${!empty sessionScope.user}">
+					<li class="active"><a href="user/logout">退出登录</a></li>
+				</c:if>
+				<li><a href="cart/user/myCart">购物车</a></li>
+				<li><a href="order/user/myOrder">我的订单</a></li>
+			</ul>
+		</div>
+		<div class="header-search">
+			<form id="search-form" action="goods/searchGoods"  method="get">
+				<input id="search-text" class="search-text" type="search" id="search" name="goodsName">
+				<div class="hot_words" id="hot-words">
+					<a href="goods/searchGoods?goodsName=手机" id="hot_1">手机</a>
+					<a href="goods/searchGoods?goodsName=笔记本"  id="hot_2">笔记本电脑</a>
+				</div>
+				<input class="search-btn iconfont"  type="submit" name="" value="&#xe60b;">
+			</form>
+		</div>
 		<div class="clear"></div>
- 	</div>
-   </div>
-	 <div class="header-bottom">
-		 <div class="wrap">
-			 <!-- start header menu -->
-			 <ul class="megamenu skyblue">
-				 <li><a class="color1" href="">主 页</a></li>
-				 <li class="grid"><a class="color2" href="goods/searchGoods?goodsName=手机" target="_blank">手机</a>
-					 <div class="megapanel">
-						 <div class="row">
-							 <div class="col1">
-								 <div class="h_nav">
-									 <h4>iphone手机</h4>
-									 <ul>
-										 <li><a href="goods/showDetails/11" target="_blank">iPhone Xs</a></li>
-										 <li><a href="goods/showDetails/13" target="_blank">iPhone X</a></li>
-										 <li><a href="goods/showDetails/14" target="_blank">iPhone 8</a></li>
-									 </ul>
-								 </div>
-								 <div class="h_nav">
-									 <h4 class="top">华为手机</h4>
-									 <ul>
-										 <li><a href="goods/showDetails/16" target="_blank">华为畅玩</a></li>
-										 <li><a href="goods/showDetails/17" target="_blank">华为麦芒</a></li>
-										 <li><a href="goods/showDetails/15" target="_blank">华为荣耀系列</a></li>
-									 </ul>
-								 </div>
-							 </div>
-							 <div class="col1">
-								 <div class="h_nav">
-									 <h4>小米手机</h4>
-									 <ul>
-										 <li><a href="goods/showDetails/1" target="_blank">小米 8</a></li>
-										 <li><a href="goods/showDetails/2" target="_blank">小米Mix</a></li>
-										 <li><a href="goods/showDetails/8" target="_blank">小米Max</a></li>
-									 </ul>
-								 </div>
-							 </div>
-							 <div class="col1"></div>
-							 <div class="col1"></div>
-							 <div class="col1"></div>
-							 <div class="col1"></div>
-							 <img src="images/IPhone_XS.png" alt=""/>
-						 </div>
-					 </div>
-				 </li>
-				 <li class="active grid"><a class="color4" href="goods/searchGoods?goodsName=电视" target="_blank">电视</a>
-					 <div class="megapanel">
-						 <div class="row">
-							 <div class="col1">
-								 <div class="h_nav">
-									 <h4>小米电视</h4>
-									 <ul>
-										 <li><a href="goods/showDetails/3" target="_blank">小米电视4A 43英寸青春版</a></li>
-										 <li><a href="goods/showDetails/9" target="_blank">小米电视4C 50英寸</a></li>
-									 </ul>
-								 </div>
-							 </div>
-							 <div class="col1">
-								 <div class="h_nav">
-									 <h4>索尼电视</h4>
-									 <ul>
-										 <li><a href="goods/showDetails/23" target="_blank">索尼KD-55A9F</a></li>
-										 <li><a href="goods/showDetails/21" target="_blank">索尼KD-65Z9F</a></li>
-										 <li><a href="goods/showDetails/22" target="_blank">索尼KDL-32W600D</a></li>
-									 </ul>
-								 </div>
-							 </div>
-							 <div class="col1">
-								 <div class="h_nav">
-									 <h4>飞利浦电视</h4>
-									 <ul>
-										 <li><a href="goods/showDetails/29" target="_blank">飞利浦电视50PUF6152/T3 50英寸</a></li>
-										 <li><a href="goods/showDetails/30" target="_blank">飞利浦电视49PUF6031/T3 49英寸</a></li>
-										 <li><a href="goods/showDetails/31" target="_blank">飞利浦电视65PUF6372/T3 65英寸</a></li>
-									 </ul>
-								 </div>
-							 </div>
-							 <div class="col1">
-								 <div class="h_nav">
-									 <img src="images/samsung.jpg" alt=""/>
-								 </div>
-							 </div>
-						 </div>
-						 <div class="row">
-							 <div class="col2"></div>
-							 <div class="col1"></div>
-							 <div class="col1"></div>
-							 <div class="col1"></div>
-							 <div class="col1"></div>
-						 </div>
-					 </div>
-				 </li>
-				 <li><a class="color5" href="goods/searchGoods?goodsName=笔记本" target="_blank">笔记本</a>
-					 <div class="megapanel">
-						 <div class="row">
-							 <div class="col1">
-								 <div class="h_nav">
-									 <h4>Mac笔记本</h4>
-									 <ul>
-										 <li><a href="goods/showDetails/71" target="_blank">MacBook</a></li>
-										 <li><a href="goods/showDetails/71" target="_blank">MacBook Air (13 英寸)</a></li>
-										 <li><a href="goods/showDetails/71" target="_blank">MacBook Pro (13 英寸)</a></li>
-										 <li><a href="goods/showDetails/71" target="_blank">iMac (21.5 英寸)</a></li>
-										 <li><a href="goods/showDetails/71" target="_blank">Mac mini</a></li>
-									 </ul>
-								 </div>
-								 <div class="h_nav">
-									 <h4 class="top">戴尔笔记本</h4>
-									 <ul>
-										 <li><a href="goods/showDetails/33" target="_blank">Dell/戴尔笔记本 G3 GTX1050</a></li>
-										 <li><a href="goods/showDetails/35" target="_blank">Dell/戴尔笔记本inspiron灵越14E-3476</a></li>
-									 </ul>
-								 </div>
-							 </div>
-							 <div class="col1">
-								 <div class="h_nav">
-									 <h4>华硕笔记本</h4>
-									 <ul>
-										 <li><a href="goods/showDetails/36" target="_blank">华硕笔记本顽石(ASUS) 五代FL8000UF</a></li>
-										 <li><a href="goods/showDetails/37" target="_blank">华硕笔记本(ASUS) 灵耀S</a></li>
-										 <li><a href="goods/showDetails/38" target="_blank">华硕笔记本(ASUS) 飞行堡垒5</a></li>
-									 </ul>
-								 </div>
-							 </div>
-							 <div class="col1"></div>
-							 <div class="col1"></div>
-							 <div class="col1"></div>
-							 <div class="col1"></div>
-							 <img src="images/MaxBook.jpg" alt=""/>
-						 </div>
-					 </div>
-				 </li>
-				 <li><a class="color6" href="goods/searchGoods?goodsName=空调" target="_blank">空调</a>
-					 <div class="megapanel">
-						 <div class="row">
-							 <div class="col1">
-								 <div class="h_nav">
-									 <h4>海尔空调</h4>
-									 <ul>
-										 <li><a href="goods/showDetails/42" target="_blank">帝樽CB系列3匹变频柜式空调</a></li>
-										 <li><a href="goods/showDetails/43" target="_blank">智享系列2匹变频柜式空调</a></li>
-										 <li><a href="goods/showDetails/44" target="_blank">天樽3匹变频柜式空调</a></li>
-									 </ul>
-								 </div>
-								 <div class="h_nav">
-									 <h4 class="top">格力空调</h4>
-									 <ul>
-										 <li><a href="goods/showDetails/45" target="_blank">格力(GREE)正1.5匹  壁挂式空调</a></li>
-										 <li><a href="goods/showDetails/46" target="_blank">格力(GREE)立式定频单冷静音空调</a></li>
-									 </ul>
-								 </div>
-							 </div>
-							 <div class="col1">
-								 <div class="h_nav">
-									 <h4>美的空调</h4>
-									 <ul>
-										 <li><a href="goods/showDetails/47" target="_blank">美的(Midea)1.5匹 静音壁挂式空调</a></li>
-										 <li><a href="goods/showDetails/48" target="_blank">美的(Midea)3匹立式空调柜机</a></li>
-									 </ul>
-								 </div>
-							 </div>
-							 <div class="col1">
-								 <div class="h_nav">
-									 <h4>三菱电机</h4>
-									 <ul>
-										 <li><a href="goods/showDetails/49" target="_blank">三菱电机 1.5匹 壁挂式空调</a></li>
-										 <li><a href="goods/showDetails/50" target="_blank">三菱电机 3匹 立柜式空调</a></li>
-									 </ul>
-								 </div>
-							 </div>
-							 <img src="images/air_conditioner.jpg" style="float: right; display: inline-block;top: 0;" alt=""/>
-						 </div>
-						 <div class="row">
-							 <div class="col2"></div>
-							 <div class="col1"></div>
-							 <div class="col1"></div>
-							 <div class="col1"></div>
-							 <div class="col1"></div>
-						 </div>
-					 </div>
-				 </li>
-				 <li><a class="color7" href="#">新品</a>
-				 </li>
-				 <li><a class="color8" target="_blank" href="goods/searchGoods?goodsName=路由器">路由器</a>
-				 </li>
-				 <li><a class="color9" href="#">智能硬件</a>
-				 </li>
-				 <li><a class="color10" href="#">服务</a></li>
-				 <li><a class="color11" href="#">社区</a></li>
-			 </ul>
-			 <div class="clear"></div>
-		 </div>
-	 </div>
+	</div>
+</div>
+<div class="header-bottom">
+	<div class="wrap">
+		<!-- start header menu -->
+		<ul class="megamenu skyblue">
+			<li><a class="color1" href="">主 页</a></li>
+			<li class="grid"><a class="color2" href="goods/searchGoods?goodsName=手机">手机</a>
+				<div class="megapanel">
+					<div class="row">
+						<div class="col1">
+							<div class="h_nav">
+								<h4>iphone手机</h4>
+								<ul>
+									<li><a href="goods/showDetails/11" target="_blank">iPhone Xs</a></li>
+									<li><a href="goods/showDetails/13" target="_blank">iPhone X</a></li>
+									<li><a href="goods/showDetails/14" target="_blank">iPhone 8</a></li>
+								</ul>
+							</div>
+							<div class="h_nav">
+								<h4 class="top">华为手机</h4>
+								<ul>
+									<li><a href="goods/showDetails/16" target="_blank">华为畅玩</a></li>
+									<li><a href="goods/showDetails/17" target="_blank">华为麦芒</a></li>
+									<li><a href="goods/showDetails/15" target="_blank">华为荣耀系列</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<h4>小米手机</h4>
+								<ul>
+									<li><a href="goods/showDetails/1" target="_blank">小米 8</a></li>
+									<li><a href="goods/showDetails/2" target="_blank">小米Mix</a></li>
+									<li><a href="goods/showDetails/8" target="_blank">小米Max</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+						<img src="images/IPhone_XS.png" alt=""/>
+					</div>
+				</div>
+			</li>
+			<li class="active grid"><a class="color4" href="goods/searchGoods?goodsName=电视">电视</a>
+				<div class="megapanel">
+					<div class="row">
+						<div class="col1">
+							<div class="h_nav">
+								<h4>小米电视</h4>
+								<ul>
+									<li><a href="goods/showDetails/3" target="_blank">小米电视4A 43英寸青春版</a></li>
+									<li><a href="goods/showDetails/9" target="_blank">小米电视4C 50英寸</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<h4>索尼电视</h4>
+								<ul>
+									<li><a href="goods/showDetails/23" target="_blank">索尼KD-55A9F</a></li>
+									<li><a href="goods/showDetails/21" target="_blank">索尼KD-65Z9F</a></li>
+									<li><a href="goods/showDetails/22" target="_blank">索尼KDL-32W600D</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<h4>飞利浦电视</h4>
+								<ul>
+									<li><a href="goods/showDetails/29" target="_blank">飞利浦电视50PUF6152/T3 50英寸</a></li>
+									<li><a href="goods/showDetails/30" target="_blank">飞利浦电视49PUF6031/T3 49英寸</a></li>
+									<li><a href="goods/showDetails/31" target="_blank">飞利浦电视65PUF6372/T3 65英寸</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<img src="images/samsung.jpg" alt=""/>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col2"></div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+					</div>
+				</div>
+			</li>
+			<li><a class="color5" href="goods/searchGoods?goodsName=笔记本">笔记本</a>
+				<div class="megapanel">
+					<div class="row">
+						<div class="col1">
+							<div class="h_nav">
+								<h4>Mac笔记本</h4>
+								<ul>
+									<li><a href="goods/showDetails/71" target="_blank">MacBook</a></li>
+									<li><a href="goods/showDetails/71" target="_blank">MacBook Air (13 英寸)</a></li>
+									<li><a href="goods/showDetails/71" target="_blank">MacBook Pro (13 英寸)</a></li>
+									<li><a href="goods/showDetails/71" target="_blank">iMac (21.5 英寸)</a></li>
+									<li><a href="goods/showDetails/71" target="_blank">Mac mini</a></li>
+								</ul>
+							</div>
+							<div class="h_nav">
+								<h4 class="top">戴尔笔记本</h4>
+								<ul>
+									<li><a href="goods/showDetails/33" target="_blank">Dell/戴尔笔记本 G3 GTX1050</a></li>
+									<li><a href="goods/showDetails/35" target="_blank">Dell/戴尔笔记本inspiron灵越14E-3476</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<h4>华硕笔记本</h4>
+								<ul>
+									<li><a href="goods/showDetails/36" target="_blank">华硕笔记本顽石(ASUS) 五代FL8000UF</a></li>
+									<li><a href="goods/showDetails/37" target="_blank">华硕笔记本(ASUS) 灵耀S</a></li>
+									<li><a href="goods/showDetails/38" target="_blank">华硕笔记本(ASUS) 飞行堡垒5</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+						<img src="images/MaxBook.jpg" alt=""/>
+					</div>
+				</div>
+			</li>
+			<li><a class="color6" href="goods/searchGoods?goodsName=空调">空调</a>
+				<div class="megapanel">
+					<div class="row">
+						<div class="col1">
+							<div class="h_nav">
+								<h4>海尔空调</h4>
+								<ul>
+									<li><a href="goods/showDetails/42" target="_blank">帝樽CB系列3匹变频柜式空调</a></li>
+									<li><a href="goods/showDetails/43" target="_blank">智享系列2匹变频柜式空调</a></li>
+									<li><a href="goods/showDetails/44" target="_blank">天樽3匹变频柜式空调</a></li>
+								</ul>
+							</div>
+							<div class="h_nav">
+								<h4 class="top">格力空调</h4>
+								<ul>
+									<li><a href="goods/showDetails/45" target="_blank">格力(GREE)正1.5匹  壁挂式空调</a></li>
+									<li><a href="goods/showDetails/46" target="_blank">格力(GREE)立式定频单冷静音空调</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<h4>美的空调</h4>
+								<ul>
+									<li><a href="goods/showDetails/47" target="_blank">美的(Midea)1.5匹 静音壁挂式空调</a></li>
+									<li><a href="goods/showDetails/48" target="_blank">美的(Midea)3匹立式空调柜机</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<h4>三菱电机</h4>
+								<ul>
+									<li><a href="goods/showDetails/49" target="_blank">三菱电机 1.5匹 壁挂式空调</a></li>
+									<li><a href="goods/showDetails/50" target="_blank">三菱电机 3匹 立柜式空调</a></li>
+								</ul>
+							</div>
+						</div>
+						<img src="images/air_conditioner.jpg" style="float: right; display: inline-block;top: 0;" alt=""/>
+					</div>
+					<div class="row">
+						<div class="col2"></div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+					</div>
+				</div>
+			</li>
+			<li><a class="color7" href="#">新品</a>
+			</li>
+			<li><a class="color8" href="goods/searchGoods?goodsName=路由器">路由器</a>
+			</li>
+			<li><a class="color9" href="#">智能硬件</a>
+			</li>
+			<li><a class="color10" href="#">服务</a></li>
+			<li><a class="color11" href="#">社区</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+</div>
 	 <div class="main">
 		<div class="wrap">
 			<div class="content-bottom">
@@ -348,10 +348,9 @@
 		    	      </span>
 							<ul class="list">
 								<li>
-									<img src="images/plus.png" alt=""/>
 									<ul class="icon1 sub-icon1 profile_img">
 										<li>
-											<form id="cartForm" action="cart/addToCart" method="post">
+											<form id="cartForm"  style="margin-left: 33px;" action="cart/addToCart" method="post">
 												<input type="hidden" name="goodsSum" value="1"/>
 												<input type="hidden" name="goodsId" value="${goods.goodsId}">
 													<button class="btnSubmit grey2" type="button">
@@ -517,6 +516,7 @@
                      },
                      error: function () {
                          //错误处理
+                         window.location.replace("/shoppingsystem/cart/user/myCart");
                      }
                  });
              });

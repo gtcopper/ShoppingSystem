@@ -153,11 +153,11 @@
             </ul>
         </div>
         <div class="header-search">
-            <form id="search-form" action="goods/searchGoods" target="_blank" method="get">
+            <form id="search-form" action="goods/searchGoods"  method="get">
                 <input id="search-text" class="search-text" type="search" id="search" name="goodsName">
                 <div class="hot_words" id="hot-words">
-                    <a href="goods/searchGoods?goodsName=手机" target="_blank" id="hot_1">手机</a>
-                    <a href="goods/searchGoods?goodsName=笔记本" target="_blank" id="hot_2">笔记本电脑</a>
+                    <a href="goods/searchGoods?goodsName=手机" id="hot_1">手机</a>
+                    <a href="goods/searchGoods?goodsName=笔记本"  id="hot_2">笔记本电脑</a>
                 </div>
                 <input class="search-btn iconfont"  type="submit" name="" value="&#xe60b;">
             </form>
@@ -170,7 +170,7 @@
         <!-- start header menu -->
         <ul class="megamenu skyblue">
             <li><a class="color1" href="">主 页</a></li>
-            <li class="grid"><a class="color2" href="goods/searchGoods?goodsName=手机" target="_blank">手机</a>
+            <li class="grid"><a class="color2" href="goods/searchGoods?goodsName=手机">手机</a>
                 <div class="megapanel">
                     <div class="row">
                         <div class="col1">
@@ -209,7 +209,7 @@
                     </div>
                 </div>
             </li>
-            <li class="active grid"><a class="color4" href="goods/searchGoods?goodsName=电视" target="_blank">电视</a>
+            <li class="active grid"><a class="color4" href="goods/searchGoods?goodsName=电视">电视</a>
                 <div class="megapanel">
                     <div class="row">
                         <div class="col1">
@@ -256,7 +256,7 @@
                     </div>
                 </div>
             </li>
-            <li><a class="color5" href="goods/searchGoods?goodsName=笔记本" target="_blank">笔记本</a>
+            <li><a class="color5" href="goods/searchGoods?goodsName=笔记本">笔记本</a>
                 <div class="megapanel">
                     <div class="row">
                         <div class="col1">
@@ -296,7 +296,7 @@
                     </div>
                 </div>
             </li>
-            <li><a class="color6" href="goods/searchGoods?goodsName=空调" target="_blank">空调</a>
+            <li><a class="color6" href="goods/searchGoods?goodsName=空调">空调</a>
                 <div class="megapanel">
                     <div class="row">
                         <div class="col1">
@@ -347,7 +347,7 @@
             </li>
             <li><a class="color7" href="#">新品</a>
             </li>
-            <li><a class="color8" target="_blank" href="goods/searchGoods?goodsName=路由器">路由器</a>
+            <li><a class="color8"  href="goods/searchGoods?goodsName=路由器">路由器</a>
             </li>
             <li><a class="color9" href="#">智能硬件</a>
             </li>
@@ -577,6 +577,7 @@
                 },
                 error: function () {
                     //错误处理
+                    window.location.replace("/shoppingsystem/cart/user/myCart");
                 }
             });
         });
